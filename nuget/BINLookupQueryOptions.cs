@@ -12,7 +12,6 @@ namespace APIVerve.API.BINLookup
     {
         /// <summary>
         /// The first six digits of the credit card number (BIN)
-        /// Example: 448590
         /// </summary>
         [JsonProperty("bin")]
         public string Bin { get; set; }
