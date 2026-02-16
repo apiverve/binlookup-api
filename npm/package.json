@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/binlookup",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "BIN Lookup is a simple tool for looking up BIN number information. It returns information such as the bank, card type, and more based on the BIN number provided.",
   "main": "index.js",
   "types": "index.d.ts",
