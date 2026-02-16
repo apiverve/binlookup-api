@@ -232,8 +232,9 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient
 
 api = BinlookupAPIClient("[YOUR_API_KEY]")
 
+query = { "bin": "448590" }
+
 try:
-    query = { "bin": "448590" }
     result = api.execute(query)
     print(result)
 finally:
