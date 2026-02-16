@@ -30,7 +30,6 @@ namespace APIVerve.API.BINLookup
     public partial class Data
     {
         [JsonProperty("bin")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Bin { get; set; }
 
         [JsonProperty("brand")]
