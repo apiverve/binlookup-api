@@ -126,6 +126,7 @@ async function makeRequest() {
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
+    "country": "United States",
     "issuer": {
       "name": "JPMORGAN CHASE BANK, N.A.",
       "country": "United States",
@@ -133,7 +134,6 @@ async function makeRequest() {
       "website": "www.chase.com"
     },
     "location": {
-      "country": "United States",
       "latitude": "37.0902",
       "longitude": "-95.7129",
       "alpha2": "US",
