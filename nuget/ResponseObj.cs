@@ -25,12 +25,15 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("bin")]
-        public long Bin { get; set; }
+        public long? Bin { get; set; }
 
         [JsonProperty("brand")]
         public string Brand { get; set; }
@@ -40,6 +43,9 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("category")]
         public string Category { get; set; }
+
+        [JsonProperty("country")]
+        public string Country { get; set; }
 
         [JsonProperty("issuer")]
         public Issuer Issuer { get; set; }
@@ -65,9 +71,6 @@ namespace APIVerve.API.BINLookup
 
     public partial class Location
     {
-        [JsonProperty("country")]
-        public string Country { get; set; }
-
         [JsonProperty("latitude")]
         public string Latitude { get; set; }
 
@@ -79,5 +82,17 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("alpha3")]
         public string Alpha3 { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
