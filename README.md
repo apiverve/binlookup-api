@@ -191,11 +191,44 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the BIN Lookup API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "bin": "448590",
+    "brand": "VISA",
+    "type": "CREDIT",
+    "category": "PURCHASING",
+    "country": "United States",
+    "issuer": {
+      "name": "JPMORGAN CHASE BANK, N.A.",
+      "country": "United States",
+      "phone": "1-800-432-3117",
+      "website": "www.chase.com"
+    },
+    "location": {
+      "latitude": "37.0902",
+      "longitude": "-95.7129",
+      "alpha2": "US",
+      "alpha3": "USA"
+    }
+  }
 }
 ```
 
