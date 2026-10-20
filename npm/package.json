@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/binlookup",
-  "version": "1.2.0",
-  "description": "BIN Lookup is a simple tool for looking up BIN number information. It returns information such as the bank, card type, and more based on the BIN number provided.",
+  "version": "1.2.2",
+  "description": "BIN Lookup checks the first six digits of a payment card to return card brand, type, issuing bank, and country of issuance. Pass a card BIN to inspect whether incoming cards are debit, credit, or prepaid.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "bin lookup", "bin lookup api", "bin lookup tool", "bin lookup software", "bin lookup service"
+    "bin lookup api", "credit card bin lookup", "identify card brand", "check card type", "bank identification number"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/binlookup-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/binlookup?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/binlookup?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
