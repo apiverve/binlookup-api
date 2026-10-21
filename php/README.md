@@ -1,6 +1,6 @@
 # BIN Lookup API - PHP Package
 
-BIN Lookup is a simple tool for looking up BIN number information. It returns information such as the bank, card type, and more based on the BIN number provided.
+BIN Lookup checks the first six digits of a payment card to return card brand, type, issuing bank, and country of issuance. Pass a card BIN to inspect whether incoming cards are debit, credit, or prepaid.
 
 ## Installation
 
@@ -97,11 +97,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/binlookup?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/binlookup?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/binlookup?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/binlookup?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/binlookup?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/binlookup?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
