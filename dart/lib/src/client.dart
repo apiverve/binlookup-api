@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// BIN Lookup API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/binlookup?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/binlookup?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [bin] (required) - The first six digits of the credit card number (BIN) [minLength: 6, maxLength: 8]
