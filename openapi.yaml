@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: BIN Lookup
   description: >-
-    BIN Lookup checks the first six digits of a payment card to return card
-    brand, type, issuing bank, and country of issuance. Pass a card BIN to
-    inspect whether incoming cards are debit, credit, or prepaid.
+    BIN Lookup is a BIN checker API: send the first 6 to 8 digits of a payment
+    card and get the card brand, type (debit or credit), issuing bank and
+    country of issuance back as JSON. Check incoming cards at checkout before
+    you charge them.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -66,6 +67,21 @@ paths:
                     longitude: '-95.7129'
                     alpha2: US
                     alpha3: USA
+                    numeric: '840'
+                    currency: USD
+                    currencies:
+                      - USD
+                    flag: 🇺🇸
+                  number:
+                    scheme: visa
+                    lengths:
+                      - 16
+                      - 18
+                      - 19
+                    luhn: true
+                    code:
+                      name: CVV
+                      size: 3
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
