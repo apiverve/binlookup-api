@@ -32,6 +32,7 @@ declare module '@apiverve/binlookup' {
       country:  null | string;
       issuer:   Issuer;
       location: Location;
+      number:   Number;
   }
   
   interface Issuer {
@@ -42,10 +43,26 @@ declare module '@apiverve/binlookup' {
   }
   
   interface Location {
-      latitude:  null | string;
-      longitude: null | string;
-      alpha2:    null | string;
-      alpha3:    null | string;
+      latitude:   null | string;
+      longitude:  null | string;
+      alpha2:     null | string;
+      alpha3:     null | string;
+      numeric:    null | string;
+      currency:   null | string;
+      currencies: (null | string)[];
+      flag:       null | string;
+  }
+  
+  interface Number {
+      scheme:  null | string;
+      lengths: (number | null)[];
+      luhn:    boolean | null;
+      code:    Code;
+  }
+  
+  interface Code {
+      name: null | string;
+      size: number | null;
   }
 
   export default class binlookupWrapper {
