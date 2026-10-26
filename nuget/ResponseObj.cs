@@ -52,6 +52,9 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("location")]
         public Location Location { get; set; }
+
+        [JsonProperty("number")]
+        public Number Number { get; set; }
     }
 
     public partial class Issuer
@@ -82,6 +85,42 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("alpha3")]
         public string Alpha3 { get; set; }
+
+        [JsonProperty("numeric")]
+        public long? Numeric { get; set; }
+
+        [JsonProperty("currency")]
+        public string Currency { get; set; }
+
+        [JsonProperty("currencies")]
+        public string[] Currencies { get; set; }
+
+        [JsonProperty("flag")]
+        public string Flag { get; set; }
+    }
+
+    public partial class Number
+    {
+        [JsonProperty("scheme")]
+        public string Scheme { get; set; }
+
+        [JsonProperty("lengths")]
+        public long?[] Lengths { get; set; }
+
+        [JsonProperty("luhn")]
+        public bool? Luhn { get; set; }
+
+        [JsonProperty("code")]
+        public Code Code { get; set; }
+    }
+
+    public partial class Code
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("size")]
+        public long? Size { get; set; }
     }
 
     public partial class Premium
