@@ -1,6 +1,6 @@
 # BIN Lookup API - Ruby Gem
 
-BIN Lookup checks the first six digits of a payment card to return card brand, type, issuing bank, and country of issuance. Pass a card BIN to inspect whether incoming cards are debit, credit, or prepaid.
+BIN Lookup is a BIN checker API: send the first 6 to 8 digits of a payment card and get the card brand, type (debit or credit), issuing bank and country of issuance back as JSON. Check incoming cards at checkout before you charge them.
 
 ## Installation
 
@@ -88,7 +88,26 @@ client = APIVerve::Binlookup::Client.new(
       "latitude": "37.0902",
       "longitude": "-95.7129",
       "alpha2": "US",
-      "alpha3": "USA"
+      "alpha3": "USA",
+      "numeric": "840",
+      "currency": "USD",
+      "currencies": [
+        "USD"
+      ],
+      "flag": "🇺🇸"
+    },
+    "number": {
+      "scheme": "visa",
+      "lengths": [
+        16,
+        18,
+        19
+      ],
+      "luhn": true,
+      "code": {
+        "name": "CVV",
+        "size": 3
+      }
     }
   }
 }
