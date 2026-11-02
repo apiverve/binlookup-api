@@ -1,6 +1,6 @@
 name: apiverve_binlookup
 description: "BIN Lookup is a BIN checker API: send the first 6 to 8 digits of a payment card and get the card brand, type (debit or credit), issuing bank and country of issuance back as JSON. Check incoming cards at checkout before you charge them."
-version: 1.2.3
+version: 1.2.4
 homepage: https://apiverve.com/marketplace/binlookup?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/binlookup-api/tree/main/dart
 

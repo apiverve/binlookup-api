@@ -50,6 +50,7 @@ final _formatPatterns = {
 ///
 /// Parameters:
 /// * [bin] (required) - The first six digits of the credit card number (BIN) [minLength: 6, maxLength: 8]
+/// * [ip] - Optional IP address of the customer paying with the card. When given, customerIp says which country the IP is in and whether it matches the country that issued the card [format: ip]
 class BinlookupClient {
   final String apiKey;
   final String baseUrl;
@@ -58,6 +59,7 @@ class BinlookupClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'bin': ValidationRule(type: 'string', required: true, minLength: 6, maxLength: 8),
+    'ip': ValidationRule(type: 'string', required: false, format: 'ip'),
   };
 
   BinlookupClient(this.apiKey, {

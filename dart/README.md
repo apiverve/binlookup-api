@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_binlookup: ^1.2.3
+  apiverve_binlookup: ^1.2.4
 ```
 
 Then run:
@@ -34,7 +34,8 @@ void main() async {
 
   try {
     final response = await client.execute({
-      'bin': '448590'
+      'bin': '448590',
+      'ip': '81.2.69.142'
     });
 
     print('Status: ${response.status}');
@@ -56,12 +57,12 @@ void main() async {
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -73,7 +74,10 @@ void main() async {
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -87,7 +91,8 @@ void main() async {
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```

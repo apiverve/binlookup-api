@@ -64,6 +64,7 @@ class BinlookupData {
   BinlookupDataIssuer? issuer;
   BinlookupDataLocation? location;
   BinlookupDataNumber? number;
+  dynamic customerIp;
 
   BinlookupData({
     this.bin,
@@ -74,6 +75,7 @@ class BinlookupData {
     this.issuer,
     this.location,
     this.number,
+    this.customerIp,
   });
 
   factory BinlookupData.fromJson(Map<String, dynamic> json) => BinlookupData(
@@ -85,14 +87,15 @@ class BinlookupData {
       issuer: json['issuer'] != null ? BinlookupDataIssuer.fromJson(json['issuer']) : null,
       location: json['location'] != null ? BinlookupDataLocation.fromJson(json['location']) : null,
       number: json['number'] != null ? BinlookupDataNumber.fromJson(json['number']) : null,
+      customerIp: json['customerIp'],
     );
 }
 
 class BinlookupDataIssuer {
   String? name;
   String? country;
-  String? phone;
-  String? website;
+  dynamic phone;
+  dynamic website;
 
   BinlookupDataIssuer({
     this.name,
@@ -118,6 +121,9 @@ class BinlookupDataLocation {
   String? currency;
   List<String>? currencies;
   String? flag;
+  bool? isEU;
+  bool? isEEA;
+  bool? isSEPA;
 
   BinlookupDataLocation({
     this.latitude,
@@ -128,6 +134,9 @@ class BinlookupDataLocation {
     this.currency,
     this.currencies,
     this.flag,
+    this.isEU,
+    this.isEEA,
+    this.isSEPA,
   });
 
   factory BinlookupDataLocation.fromJson(Map<String, dynamic> json) => BinlookupDataLocation(
@@ -139,6 +148,9 @@ class BinlookupDataLocation {
       currency: json['currency'],
       currencies: (json['currencies'] as List?)?.cast<String>(),
       flag: json['flag'],
+      isEU: json['isEU'],
+      isEEA: json['isEEA'],
+      isSEPA: json['isSEPA'],
     );
 }
 
@@ -180,12 +192,15 @@ class BinlookupDataNumberCode {
 
 class BinlookupRequest {
   String bin;
+  String? ip;
 
   BinlookupRequest({
     required this.bin,
+    this.ip,
   });
 
   Map<String, dynamic> toJson() => {
       'bin': bin,
+      if (ip != null) 'ip': ip,
     };
 }
