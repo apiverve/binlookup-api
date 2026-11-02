@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Binlookup::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ bin: "448590" })
+    #   response = client.execute({ bin: "448590", ip: "81.2.69.142" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/binlookup?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'bin' => { type: 'string', required: true, min_length: 6, max_length: 8 } }
+      VALIDATION_RULES = { 'bin' => { type: 'string', required: true, min_length: 6, max_length: 8 }, 'ip' => { type: 'string', required: false, format: 'ip' } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {

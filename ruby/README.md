@@ -35,7 +35,10 @@ require 'apiverve_binlookup'
 client = APIVerve::Binlookup::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ bin: "448590" })
+response = client.execute({
+  bin: "448590",
+  ip: "81.2.69.142"
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ bin: "448590" })
+  response = client.execute({ bin: "448590", ip: "81.2.69.142" })
   puts response["data"]
 rescue APIVerve::Binlookup::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -77,12 +80,12 @@ client = APIVerve::Binlookup::Client.new(
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -94,7 +97,10 @@ client = APIVerve::Binlookup::Client.new(
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -108,7 +114,8 @@ client = APIVerve::Binlookup::Client.new(
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```
