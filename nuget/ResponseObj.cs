@@ -55,6 +55,9 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("number")]
         public Number Number { get; set; }
+
+        [JsonProperty("customerIp")]
+        public object CustomerIp { get; set; }
     }
 
     public partial class Issuer
@@ -66,10 +69,10 @@ namespace APIVerve.API.BINLookup
         public string Country { get; set; }
 
         [JsonProperty("phone")]
-        public string Phone { get; set; }
+        public object Phone { get; set; }
 
         [JsonProperty("website")]
-        public string Website { get; set; }
+        public object Website { get; set; }
     }
 
     public partial class Location
@@ -97,6 +100,15 @@ namespace APIVerve.API.BINLookup
 
         [JsonProperty("flag")]
         public string Flag { get; set; }
+
+        [JsonProperty("isEU")]
+        public bool? IsEu { get; set; }
+
+        [JsonProperty("isEEA")]
+        public bool? IsEea { get; set; }
+
+        [JsonProperty("isSEPA")]
+        public bool? IsSepa { get; set; }
     }
 
     public partial class Number

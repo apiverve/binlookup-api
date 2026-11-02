@@ -60,7 +60,8 @@ class Program
         var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BINLookupQueryOptions {
-            Bin = "448590"
+            Bin = "448590",
+            Ip = "81.2.69.142"
         };
 
         // Make the API call
@@ -124,7 +125,8 @@ public class Example
         var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BINLookupQueryOptions {
-            Bin = "448590"
+            Bin = "448590",
+            Ip = "81.2.69.142"
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -156,7 +158,8 @@ public class Example
         var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BINLookupQueryOptions {
-            Bin = "448590"
+            Bin = "448590",
+            Ip = "81.2.69.142"
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -193,7 +196,8 @@ public class Example
         var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BINLookupQueryOptions {
-            Bin = "448590"
+            Bin = "448590",
+            Ip = "81.2.69.142"
         };
 
         try
@@ -249,7 +253,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new BINLookupQueryOptions {
-            Bin = "448590"
+            Bin = "448590",
+            Ip = "81.2.69.142"
         };
 
         try
@@ -290,7 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new BINLookupQueryOptions {
-    Bin = "448590"
+    Bin = "448590",
+    Ip = "81.2.69.142"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,7 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new BINLookupQueryOptions {
-    Bin = "448590"
+    Bin = "448590",
+    Ip = "81.2.69.142"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,7 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new BINLookupQueryOptions {
-    Bin = "448590"
+    Bin = "448590",
+    Ip = "81.2.69.142"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,7 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new BINLookupQueryOptions {
-    Bin = "448590"
+    Bin = "448590",
+    Ip = "81.2.69.142"
 };
 
 using (var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]"))
@@ -370,12 +379,12 @@ using (var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]"))
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -387,7 +396,10 @@ using (var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]"))
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -401,7 +413,8 @@ using (var apiClient = new BINLookupAPIClient("[YOUR_API_KEY]"))
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```

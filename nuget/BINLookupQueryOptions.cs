@@ -15,5 +15,11 @@ namespace APIVerve.API.BINLookup
         /// </summary>
         [JsonProperty("bin")]
         public string Bin { get; set; }
+
+        /// <summary>
+        /// Optional IP address of the customer paying with the card. When given, customerIp says which country the IP is in and whether it matches the country that issued the card
+        /// </summary>
+        [JsonProperty("ip")]
+        public string Ip { get; set; }
     }
 }
