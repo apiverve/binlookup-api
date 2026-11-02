@@ -15,7 +15,8 @@ async function callBINLookupAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            bin: &#x27;448590&#x27;
+            bin: &#x27;448590&#x27;,
+            ip: &#x27;81.2.69.142&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

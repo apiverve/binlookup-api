@@ -31,7 +31,8 @@ The BIN Lookup API provides a simple, reliable way to integrate bin lookup funct
 async function callBINLookupAPI() {
     try {
         const params = new URLSearchParams({
-            bin: '448590'
+            bin: '448590',
+            ip: '81.2.69.142'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/binlookup?${params}`, {
@@ -54,7 +55,7 @@ callBINLookupAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/binlookup?bin=448590" \
+curl -X GET "https://api.apiverve.com/v1/binlookup?bin=448590&ip=81.2.69.142" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -215,12 +216,12 @@ A real response from the BIN Lookup API:
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -232,7 +233,10 @@ A real response from the BIN Lookup API:
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -246,7 +250,8 @@ A real response from the BIN Lookup API:
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```

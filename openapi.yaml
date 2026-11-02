@@ -31,6 +31,16 @@ paths:
           required: true
           description: The first six digits of the credit card number (BIN)
           example: '448590'
+        - name: ip
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            Optional IP address of the customer paying with the card. When
+            given, customerIp says which country the IP is in and whether it
+            matches the country that issued the card
+          example: 81.2.69.142
       responses:
         '200':
           description: Successful Response
@@ -56,12 +66,12 @@ paths:
                   brand: VISA
                   type: CREDIT
                   category: PURCHASING
-                  country: United States
+                  country: UNITED STATES
                   issuer:
-                    name: JPMORGAN CHASE BANK, N.A.
-                    country: United States
-                    phone: 1-800-432-3117
-                    website: www.chase.com
+                    name: JPMORGAN CHASE BANK N.A. - COMMERCIAL
+                    country: UNITED STATES
+                    phone: null
+                    website: null
                   location:
                     latitude: '37.0902'
                     longitude: '-95.7129'
@@ -72,6 +82,9 @@ paths:
                     currencies:
                       - USD
                     flag: 🇺🇸
+                    isEU: false
+                    isEEA: false
+                    isSEPA: false
                   number:
                     scheme: visa
                     lengths:
@@ -82,6 +95,7 @@ paths:
                     code:
                       name: CVV
                       size: 3
+                  customerIp: null
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

@@ -18,7 +18,7 @@ def call_binlookup_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;bin&#x27;: &#x27;448590&#x27;}
+        params &#x3D; {&#x27;bin&#x27;: &#x27;448590&#x27;, &#x27;ip&#x27;: &#x27;81.2.69.142&#x27;}
 
         headers = {
             'x-api-key': API_KEY

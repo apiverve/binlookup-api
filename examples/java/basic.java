@@ -15,6 +15,7 @@ public class BasicExample {
             // Query parameters
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
         parameters.put(&quot;bin&quot;, &quot;448590&quot;);
+        parameters.put(&quot;ip&quot;, &quot;81.2.69.142&quot;);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);
