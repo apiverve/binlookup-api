@@ -15,7 +15,7 @@ use APIVerve\Binlookup\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['bin' => '448590']);
+ * $response = $client->execute(['bin' => '448590', 'ip' => '81.2.69.142']);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'bin' => ['type' => 'string', 'required' => true, 'minLength' => 6, 'maxLength' => 8]
+        'bin' => ['type' => 'string', 'required' => true, 'minLength' => 6, 'maxLength' => 8],
+        'ip' => ['type' => 'string', 'required' => false, 'format' => 'ip']
     ];
 
     /**

@@ -27,7 +27,10 @@ use APIVerve\Binlookup\Client;
 $client = new Client('YOUR_API_KEY');
 
 // Make a request
-$response = $client->execute(['bin' => '448590']);
+$response = $client->execute([
+    'bin' => '448590',
+    'ip' => '81.2.69.142'
+]);
 
 // Print the response
 print_r($response);
@@ -42,7 +45,7 @@ use APIVerve\Binlookup\Exceptions\APIException;
 use APIVerve\Binlookup\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['bin' => '448590']);
+    $response = $client->execute(['bin' => '448590', 'ip' => '81.2.69.142']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -73,12 +76,12 @@ $client = new Client(
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -90,7 +93,10 @@ $client = new Client(
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -104,7 +110,8 @@ $client = new Client(
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```
