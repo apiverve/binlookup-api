@@ -25,21 +25,22 @@ declare module '@apiverve/binlookup' {
 
 
   interface BINLookupData {
-      bin:      null | string;
-      brand:    null | string;
-      type:     null | string;
-      category: null | string;
-      country:  null | string;
-      issuer:   Issuer;
-      location: Location;
-      number:   Number;
+      bin:        null | string;
+      brand:      null | string;
+      type:       null | string;
+      category:   null | string;
+      country:    null | string;
+      issuer:     Issuer;
+      location:   Location;
+      number:     Number;
+      customerIP: null;
   }
   
   interface Issuer {
       name:    null | string;
       country: null | string;
-      phone:   null | string;
-      website: null | string;
+      phone:   null;
+      website: null;
   }
   
   interface Location {
@@ -51,6 +52,9 @@ declare module '@apiverve/binlookup' {
       currency:   null | string;
       currencies: (null | string)[];
       flag:       null | string;
+      isEU:       boolean | null;
+      isEEA:      boolean | null;
+      isSEPA:     boolean | null;
   }
   
   interface Number {

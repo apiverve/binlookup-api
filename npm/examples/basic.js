@@ -15,7 +15,8 @@ const api = new binlookupAPI({
 
 // Example query
 var query = {
-  bin: "448590"
+  bin: "448590",
+  ip: "81.2.69.142"
 };
 
 // Make the API request using callback

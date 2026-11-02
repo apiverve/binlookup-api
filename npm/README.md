@@ -57,7 +57,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  bin: "448590"
+  bin: "448590",
+  ip: "81.2.69.142"
 };
 
 api.execute(query, function (error, data) {
@@ -77,7 +78,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  bin: "448590"
+  bin: "448590",
+  ip: "81.2.69.142"
 };
 
 api.execute(query)
@@ -98,7 +100,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  bin: "448590"
+  bin: "448590",
+  ip: "81.2.69.142"
 };
 
     try {
@@ -123,12 +126,12 @@ async function makeRequest() {
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -140,7 +143,10 @@ async function makeRequest() {
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -154,7 +160,8 @@ async function makeRequest() {
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```

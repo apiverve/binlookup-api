@@ -30,7 +30,7 @@ class binlookupWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/binlookup';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"bin":{"type":"string","required":true,"minLength":6,"maxLength":8}};
+        this.validationRules = {"bin":{"type":"string","required":true,"minLength":6,"maxLength":8},"ip":{"type":"string","required":false,"format":"ip"}};
     }
 
     /**
