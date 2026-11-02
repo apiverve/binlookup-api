@@ -24,7 +24,8 @@ class ValidationError(BinlookupAPIClientError):
 class BinlookupAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "bin": {"type": "string", "required": True, "minLength": 6, "maxLength": 8}
+        "bin": {"type": "string", "required": True, "minLength": 6, "maxLength": 8},
+        "ip": {"type": "string", "required": False, "format": "ip"}
     }
 
     # Format validation patterns

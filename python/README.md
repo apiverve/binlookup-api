@@ -43,7 +43,10 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient
 # Initialize the client with your APIVerve API key
 api = BinlookupAPIClient("[YOUR_API_KEY]")
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 try:
     # Make the API call
@@ -81,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 ```
 
 ###### Simple Request
@@ -105,12 +111,12 @@ print(result)
     "brand": "VISA",
     "type": "CREDIT",
     "category": "PURCHASING",
-    "country": "United States",
+    "country": "UNITED STATES",
     "issuer": {
-      "name": "JPMORGAN CHASE BANK, N.A.",
-      "country": "United States",
-      "phone": "1-800-432-3117",
-      "website": "www.chase.com"
+      "name": "JPMORGAN CHASE BANK N.A. - COMMERCIAL",
+      "country": "UNITED STATES",
+      "phone": null,
+      "website": null
     },
     "location": {
       "latitude": "37.0902",
@@ -122,7 +128,10 @@ print(result)
       "currencies": [
         "USD"
       ],
-      "flag": "🇺🇸"
+      "flag": "🇺🇸",
+      "isEU": false,
+      "isEEA": false,
+      "isSEPA": false
     },
     "number": {
       "scheme": "visa",
@@ -136,7 +145,8 @@ print(result)
         "name": "CVV",
         "size": 3
       }
-    }
+    },
+    "customerIp": null
   }
 }
 ```
@@ -154,7 +164,10 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient, BinlookupAPIClientE
 
 api = BinlookupAPIClient("[YOUR_API_KEY]")
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 try:
     result = api.execute(query)
@@ -175,7 +188,10 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient, BinlookupAPIClientE
 
 api = BinlookupAPIClient("[YOUR_API_KEY]")
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 try:
     result = api.execute(query)
@@ -209,7 +225,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_binlookup.apiClient import BinlookupAPIClient, BinlookupAPIClientError
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 # Using context manager ensures proper cleanup
 with BinlookupAPIClient("[YOUR_API_KEY]") as api:
@@ -235,7 +254,10 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient
 # Enable debug mode
 api = BinlookupAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -250,7 +272,10 @@ from apiverve_binlookup.apiClient import BinlookupAPIClient
 
 api = BinlookupAPIClient("[YOUR_API_KEY]")
 
-query = { "bin": "448590" }
+query = {
+    "bin": "448590",
+    "ip": "81.2.69.142"
+}
 
 try:
     result = api.execute(query)
