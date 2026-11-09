@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/binlookup",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "BIN Lookup is a BIN checker API: send the first 6 to 8 digits of a payment card and get the card brand, type (debit or credit), issuing bank and country of issuance back as JSON. Check incoming cards at checkout before you charge them.",
   "main": "index.js",
   "types": "index.d.ts",
